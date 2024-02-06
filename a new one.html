@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>กดดูสิครับหมูอังปังหน่า</title>
+<style>
+  body {
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  #message {
+    display: none;
+    font-size: 24px;
+    text-align: center;
+  }
+  #particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: -1;
+  }
+</style>
+</head>
+<body>
+
+<button id="showMessageBtn">ลองกดดูสิครับหมูอังปังหน่า</button>
+
+<div id="message"></div>
+<div id="particles-js"></div>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+document.getElementById('showMessageBtn').addEventListener('click', function() {
+  document.getElementById('showMessageBtn').style.display = 'none';
+  document.getElementById('message').innerText = 'Bom loves Noynha very much na rak fan mak mak EiEi';
+
+  setTimeout(function() {
+    document.getElementById('message').style.display = 'block';
+    document.body.style.backgroundColor = 'lightpink';
+    createFireworksAndHearts();
+
+    setTimeout(function() {
+      document.getElementById('message').innerText = 'หมูหน่ารักบอมไหม';
+      createButtons();
+    }, 2000);
+  }, 100);
+});
+
+function createButtons() {
+  var button1 = document.createElement('button');
+  button1.innerText = 'รักบอมค้าบบบ';
+  button1.onclick = function() {
+    document.getElementById('message').innerText = 'อัยย้ะๆ';
+  };
+
+  var button2 = document.createElement('button');
+  button2.innerText = 'ไม่รักหรอกงอนแล่ว';
+  button2.onclick = function() {
+    document.getElementById('message').innerText = 'ละมึง ค ไร .';
+  };
+
+  document.body.appendChild(button1);
+  document.body.appendChild(button2);
+}
+
+function createFireworksAndHearts() {
+  particlesJS('particles-js', {
+    "particles": {
+      "number": {
+        "value": 80,
+        "density": {
+          "enable": true,
+          "value_area": 800
+        }
+      },
+      "color": {
+        "value": "#ffffff"
+      },
+      "shape": {
+        "type": "heart",
+        "stroke": {
+          "width": 0,
+          "color": "#000000"
+        },
+        "polygon": {
+          "nb_sides": 5
+        }
+      },
+      "opacity": {
+        "value": 0.5,
+        "random": false,
+        "anim": {
+          "enable": false,
+          "speed": 1,
+          "opacity_min": 0.1,
+          "sync": false
+        }
+      },
+      "size": {
+        "value": 10,
+        "random": true,
+        "anim": {
+          "enable": false,
+          "speed": 40,
+          "size_min": 0.1,
+          "sync": false
+        }
+      },
+      "line_linked": {
+        "enable": false,
+        "distance": 150,
+        "color": "#ffffff",
+        "opacity": 0.4,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 6,
+        "direction": "none",
+        "random": false,
+        "straight": false,
+        "out_mode": "out",
+        "bounce": false,
+        "attract": {
+          "enable": false,
+          "rotateX": 600,
+          "rotateY": 1200
+        }
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": {
+          "enable": false,
+          "mode": "repulse"
+        },
+        "onclick": {
+          "enable": false,
+          "mode": "push"
+        },
+        "resize": true
+      }
+    },
+    "retina_detect": true
+  });
+}
+
+setTimeout(function() {
+  document.getElementById('message').innerText = 'อูยหยอกๆ';
+}, 5000);
+</script>
+
+</body>
+</html>
